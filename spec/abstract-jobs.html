@@ -210,6 +210,14 @@
           make this call at a time which does not interrupt synchronous
           ECMAScript code execution.
         </p>
+
+        <p>
+          If during the call to CleanupFinalizationGroup(_fg_) the implementation
+          takes the second branch in step 8 of %FinalizationGroupCleanupIteratorPrototype%.next ( )
+          for a _cell_ meeting the condition, this operation is expected to call
+          CleanupFinalizationGroup(_fg_) again in the future, if possible, and until
+          the second branch is not taken for the _cell_ meeting the condition.
+        </p>
       </emu-clause>
     </emu-clause>
   </emu-clause>
